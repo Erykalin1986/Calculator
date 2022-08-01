@@ -6,7 +6,7 @@
         private string tempParametr = "";
         private double tempMemory = 0;
         private bool flag = false;
-        Point lastPoint;
+        private Point lastPoint;
 
         public Form1()
         {
