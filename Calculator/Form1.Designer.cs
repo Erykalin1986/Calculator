@@ -83,7 +83,7 @@
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopPanel.Location = new System.Drawing.Point(0, 0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(300, 31);
+            this.TopPanel.Size = new System.Drawing.Size(300, 32);
             this.TopPanel.TabIndex = 0;
             this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
             this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseMove);
@@ -91,7 +91,7 @@
             // NormalSizeButton
             // 
             this.NormalSizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NormalSizeButton.Location = new System.Drawing.Point(240, 1);
+            this.NormalSizeButton.Location = new System.Drawing.Point(238, 0);
             this.NormalSizeButton.Margin = new System.Windows.Forms.Padding(0);
             this.NormalSizeButton.Name = "NormalSizeButton";
             this.NormalSizeButton.Size = new System.Drawing.Size(30, 30);
@@ -106,7 +106,7 @@
             this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MinimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.MinimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.MinimizeButton.Location = new System.Drawing.Point(210, 0);
+            this.MinimizeButton.Location = new System.Drawing.Point(208, 0);
             this.MinimizeButton.Margin = new System.Windows.Forms.Padding(0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(30, 30);
@@ -118,7 +118,7 @@
             // MaxSizeButton
             // 
             this.MaxSizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MaxSizeButton.Location = new System.Drawing.Point(240, 0);
+            this.MaxSizeButton.Location = new System.Drawing.Point(238, 0);
             this.MaxSizeButton.Margin = new System.Windows.Forms.Padding(0);
             this.MaxSizeButton.Name = "MaxSizeButton";
             this.MaxSizeButton.Size = new System.Drawing.Size(30, 30);
@@ -130,7 +130,7 @@
             // ButtonClose
             // 
             this.ButtonClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ButtonClose.Location = new System.Drawing.Point(270, 0);
+            this.ButtonClose.Location = new System.Drawing.Point(268, 0);
             this.ButtonClose.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonClose.Name = "ButtonClose";
             this.ButtonClose.Size = new System.Drawing.Size(30, 30);
@@ -198,7 +198,7 @@
             this.ControlPanel.Controls.Add(this.ButtonMR);
             this.ControlPanel.Controls.Add(this.ButtonMC);
             this.ControlPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ControlPanel.Location = new System.Drawing.Point(0, 31);
+            this.ControlPanel.Location = new System.Drawing.Point(0, 32);
             this.ControlPanel.Name = "ControlPanel";
             this.ControlPanel.Size = new System.Drawing.Size(300, 485);
             this.ControlPanel.TabIndex = 2;
