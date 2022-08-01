@@ -158,7 +158,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(298, 55);
+            this.textBox1.Size = new System.Drawing.Size(298, 57);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "0";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -264,6 +264,7 @@
             this.ButtonNegative.Text = "±";
             this.ButtonNegative.UseCompatibleTextRendering = true;
             this.ButtonNegative.UseVisualStyleBackColor = false;
+            this.ButtonNegative.Click += new System.EventHandler(this.ButtonNegative_Click);
             // 
             // ButtonPlus
             // 
@@ -587,6 +588,7 @@
             this.ButtonMMinus.TabIndex = 9;
             this.ButtonMMinus.Text = "M-";
             this.ButtonMMinus.UseVisualStyleBackColor = true;
+            this.ButtonMMinus.Click += new System.EventHandler(this.ButtonMMinus_Click);
             // 
             // ButtonMS
             // 
@@ -601,6 +603,7 @@
             this.ButtonMS.TabIndex = 8;
             this.ButtonMS.Text = "MS";
             this.ButtonMS.UseVisualStyleBackColor = true;
+            this.ButtonMS.Click += new System.EventHandler(this.ButtonMS_Click);
             // 
             // ButtonMPlus
             // 
@@ -615,6 +618,7 @@
             this.ButtonMPlus.TabIndex = 7;
             this.ButtonMPlus.Text = "M+";
             this.ButtonMPlus.UseVisualStyleBackColor = true;
+            this.ButtonMPlus.Click += new System.EventHandler(this.ButtonMPlus_Click);
             // 
             // ButtonMR
             // 
@@ -629,6 +633,7 @@
             this.ButtonMR.TabIndex = 6;
             this.ButtonMR.Text = "MR";
             this.ButtonMR.UseVisualStyleBackColor = true;
+            this.ButtonMR.Click += new System.EventHandler(this.ButtonMR_Click);
             // 
             // ButtonMC
             // 
@@ -643,6 +648,7 @@
             this.ButtonMC.TabIndex = 5;
             this.ButtonMC.Text = "MC";
             this.ButtonMC.UseVisualStyleBackColor = true;
+            this.ButtonMC.Click += new System.EventHandler(this.ButtonMC_Click);
             // 
             // Form1
             // 

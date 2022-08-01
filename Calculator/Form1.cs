@@ -4,7 +4,9 @@
     {
         private string act = "";
         private string tempParametr = "";
+        private double tempMemory = 0;
         private bool flag = false;
+        Point lastPoint;
 
         public Form1()
         {
@@ -69,19 +71,19 @@
         }
 
         /// <summary>
-        /// Очищает значение в поле ввода и память.
+        /// Очищает значение в поле ввода.
         /// </summary>
         private void ButtonCE_Click(object sender, EventArgs e)
         {
-            tempParametr = "";
             textBox1.Text = "0";
         }
 
         /// <summary>
-        /// Очищает значения в поле ввода.
+        /// Очищает значения в поле ввода и введённое ранее его значение.
         /// </summary>
         private void ButtonC_Click(object sender, EventArgs e)
         {
+            tempParametr = "";
             textBox1.Text = "0";
         }
 
@@ -121,25 +123,27 @@
         /// </summary>
         private void ButtonPercent_Click(object sender, EventArgs e)
         {
-            decimal firstValue = 0;
-            decimal secondValue = 0;
-            decimal percent = 0;
+            double firstValue = 0;
+            double secondValue = 0;
+            double percent = 0;
             
             if (tempParametr != "")
             {
-                Decimal.TryParse(tempParametr, out firstValue);
-                Decimal.TryParse(textBox1.Text, out secondValue);
+                double.TryParse(tempParametr, out firstValue);
+                double.TryParse(textBox1.Text, out secondValue);
                 percent = (firstValue * secondValue) / 100;
                 textBox1.Text = percent.ToString();
             }
         }
 
         /// <summary>
-        /// 
+        /// Высчитывает квадратный корень из числа.
         /// </summary>
         private void buttonRoot_Click(object sender, EventArgs e)
         {
-
+            double value = 0;
+            double.TryParse(textBox1.Text, out value);
+            textBox1.Text = Math.Sqrt(value).ToString();
         }
 
         /// <summary>
@@ -147,8 +151,8 @@
         /// </summary>
         private void buttonDegree_Click(object sender, EventArgs e)
         {
-            decimal value = 0;
-            Decimal.TryParse(textBox1.Text, out value);
+            double value = 0;
+            double.TryParse(textBox1.Text, out value);
             textBox1.Text = (value * value).ToString();
         }
 
@@ -157,8 +161,8 @@
         /// </summary>
         private void button1X_Click(object sender, EventArgs e)
         {
-            decimal value = 0;
-            Decimal.TryParse(textBox1.Text, out value);
+            double value = 0;
+            double.TryParse(textBox1.Text, out value);
             textBox1.Text = (1 / value).ToString();
         }
 
@@ -167,10 +171,10 @@
         /// </summary>
         private void ButtonEquals_Click(object sender, EventArgs e)
         {
-            decimal firstValue, secondValue, result = 0;
+            double firstValue, secondValue, result = 0;
 
-            Decimal.TryParse(tempParametr, out firstValue);
-            Decimal.TryParse(textBox1.Text, out secondValue);
+            double.TryParse(tempParametr, out firstValue);
+            double.TryParse(textBox1.Text, out secondValue);
 
             if (act == "+") result = firstValue + secondValue;
             if (act == "-") result = firstValue - secondValue;
@@ -181,7 +185,6 @@
             flag = true;
         }
 
-        Point lastPoint;
         /// <summary>
         /// Действие при движение мыши с зажатой левой клавишей.
         /// </summary>
@@ -200,6 +203,70 @@
         private void TopPanel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
+        }
+
+        /// <summary>
+        /// Делает отрицательным или наоборот значение в поле ввода.
+        /// </summary>
+        private void ButtonNegative_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox1.Text != "0")
+            {
+                if (textBox1.Text.Contains("-")) textBox1.Text = textBox1.Text.Remove(0, 1);
+                else textBox1.Text = textBox1.Text.Insert(0, "-");
+            }
+        }
+
+        /// <summary>
+        /// Сохраняет число, отображенное в данный момент на дисплее калькулятора в память.
+        /// </summary>
+        private void ButtonMS_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "" && textBox1.Text != "0") double.TryParse(textBox1.Text, out tempMemory);
+        }
+
+        /// <summary>
+        /// Вычитает из числа в памяти число, отображенное на дисплее калькулятора и результат записывает в память.
+        /// </summary>
+        private void ButtonMMinus_Click(object sender, EventArgs e)
+        {
+            double value = 0;
+
+            if (textBox1.Text != "" && textBox1.Text != "0")
+            {
+                double.TryParse(textBox1.Text, out value);
+                tempMemory -= value;
+            }
+        }
+
+        /// <summary>
+        /// Прибавляет к числу из памяти число, отображенное на дисплее и результат записать в память вместо предыдущего.
+        /// </summary>
+        private void ButtonMPlus_Click(object sender, EventArgs e)
+        {
+            double value = 0;
+
+            if (textBox1.Text != "" && textBox1.Text != "0")
+            {
+                double.TryParse(textBox1.Text, out value);
+                tempMemory += value;
+            }
+        }
+
+        /// <summary>
+        /// Считывает число из ячейки памяти и выводит его на дисплей.
+        /// </summary>
+        private void ButtonMR_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = tempMemory.ToString();
+        }
+
+        /// <summary>
+        /// Стерает данные из ячейки памяти.
+        /// </summary>
+        private void ButtonMC_Click(object sender, EventArgs e)
+        {
+            tempMemory = 0;
         }
     }
 }
